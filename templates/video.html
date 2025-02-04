@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros momentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <video autoplay controls>
+            <source src="{{ url_for('static', filename='assets/video.mp4') }}" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <p id="frase1">9 meses de lindos momentos...</p>
+        <p id="frase2">y solo es el comienzo...</p>
+        <button onclick="location.href='/carta'">Continuar...</button>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('frase2').style.display = 'block';
+        }, 2000);
+    </script>
+</body>
+</html>

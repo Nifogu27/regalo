@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='assets/fondo.jpg') }}');">
+
+    <!-- Corazón animado -->
+    <div class="heart_love">❤️</div>
+
+    <!-- Sobre estático -->
+    <img id="sobre" src="{{ url_for('static', filename='assets/sobre1.jpg') }}" alt="Sobre">
+
+    <!-- Formulario -->
+    <form method="POST">
+        <label for="fecha">¿Cuándo oficializamos nuestro amor? Responde en dd/mm/aa</label>
+        <input type="text" id="fecha" name="fecha" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <audio autoplay loop>
+        <source src="{{ url_for('static', filename='assets/song.mp3') }}" type="audio/mp3">
+        Tu navegador no soporta audio.
+    </audio>
+    
+    <script>
+        function descargarPDF() {
+            const fechaInput = document.getElementById('fecha').value;
+            if (fechaInput === "04/05/24") {
+                // Crear un enlace temporal para descargar el PDF
+                const link = document.createElement('a');
+                link.href = "{{ url_for('static', filename='assets/carta.pdf') }}";
+                link.download = 'carta.pdf'; // Nombre del archivo descargado
+                document.body.appendChild(link);
+                link.click(); // Simular clic en el enlace
+                document.body.removeChild(link); // Eliminar el enlace temporal
+            } else {
+                alert("Respuesta incorrecta. Intenta de nuevo.");
+            }
+        }
+    </script>
+
+</body>
+</html>

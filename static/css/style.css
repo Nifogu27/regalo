@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: white; /* Color predeterminado para el texto */
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3); /* Fondo oscuro */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.no-background {
+  background: none !important; /* Quita el fondo solo en carta.html */
+}
+
+/* Estilo para el sobre */
+#sobre {
+  position: absolute;
+  top: 30%; /* Posición vertical */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  width: 200px; /* Ajusta el tamaño del sobre */
+  height: auto;
+  cursor: pointer; /* Cambia el cursor al pasar sobre el sobre */
+  z-index: 1; /* El sobre estará debajo del corazón */
+  animation: heartbeat 1s infinite; /* Añade la animación del corazón */
+}
+
+/* Estilo para el formulario */
+form {
+  position: absolute;
+  top: 60%; /* Mueve el formulario más arriba */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar correctamente */
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Estilo para el texto de la pregunta */
+label {
+  color: #c00462; /* Color rosa */
+  font-size: 30px; /* Tamaño de la fuente */
+  font-family: 'Arial', sans-serif; /* Tipo de fuente */
+  font-weight: bold; /* Texto en negrita */
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff69b4; /* Color rosa */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff1493; /* Color rosa más oscuro al pasar el mouse */
+}
+
+/* Estilo para el corazón animado */
+.heart_love {
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  top: 30%; /* Posición vertical */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  animation: heartbeat 1s infinite; /* Animación */
+  font-size: 50px; /* Tamaño del emoji ❤️ */
+  text-align: center;
+  color: #ff69b4; /* Color rosa */
+  z-index: 2; /* El corazón estará encima del sobre */
+}
+
+/* Animación del corazón */
+@keyframes heartbeat {
+  0% {
+      transform: translateX(-50%) scale(0.8); /* Tamaño inicial */
+  }
+  50% {
+      transform: translateX(-50%) scale(1); /* Tamaño aumentado */
+  }
+  100% {
+      transform: translateX(-50%) scale(0.8); /* Vuelve al tamaño inicial */
+  }
+}
