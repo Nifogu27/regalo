@@ -14,7 +14,7 @@ def video():
 def carta():
     if request.method == 'POST':
         fecha = request.form.get('fecha')
-        if fecha == "07/05/24" or "07/05/2024:
+        if fecha == "07/05/24":
             return send_file('static/assets/carta.pdf', as_attachment=True)
         else:
             return "Respuesta incorrecta. Intenta de nuevo."
